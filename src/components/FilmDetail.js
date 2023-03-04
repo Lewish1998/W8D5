@@ -1,6 +1,7 @@
+import CharacterList from "./CharacterList";
 import PlanetList from "./PlanetsList";
 
-const FilmDetail = ({film, planets}) => {
+const FilmDetail = ({film, planets, characters}) => {
   return(
     <div>
         <div>
@@ -11,6 +12,9 @@ const FilmDetail = ({film, planets}) => {
         </div>
         <div>
             <PlanetList planets={planets}/>
+        </div>
+        <div>
+          <CharacterList characters={characters}/>
         </div>
     </div>
   )

@@ -21,12 +21,21 @@ const MainContainer = () => {
           return fetch(planet)
           .then(r=>r.json())
         })    
+        const characterPromises = film.characters.map((character) => {
+          return fetch(character)
+          .then(r=>r.json())
+        })
         
     Promise.all(planetPromises)
         .then((data) => {
         setPlanets(data)
         setSelectedFilm(film)
     })
+    Promise.all(characterPromises)
+        .then((data) => {
+        setCharacters(data)
+        })
+
     }   
 
 
@@ -37,7 +46,7 @@ const MainContainer = () => {
             <img id="logo" src={require("../images/starwars.png")}></img>
             <img id='background'src={require('../images/background.png')}></img>
             <div id="dropdown"><FilmSelect films={films} handleSelectChange={handleSelectChange}/></div>
-            <div id="text">{selectedFilm ? <FilmDetail film={selectedFilm} planets={planets} />:null}</div>
+            <div id="text">{selectedFilm ? <FilmDetail film={selectedFilm} planets={planets} characters={characters}/>:null}</div>
         </div>
     )
 }
