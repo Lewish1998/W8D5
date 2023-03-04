@@ -1,21 +1,45 @@
-import FilmsList from "../components/FilmsList"
 import { useEffect, useState } from "react"
+import FilmDetail from "../components/FilmDetail"
+import FilmSelect from "../components/FilmSelect"
+import './container.css'
 
 const MainContainer = () => {
-
+  
     const [films, setFilms] = useState([])
+    const [selectedFilm, setSelectedFilm] = useState(null)
+    const [planets, setPlanets] = useState([])
+    const [characters, setCharacters] = useState([])
 
-    useEffect(() => {
+    useEffect( () => {
       fetch('https://swapi.dev/api/films')
       .then(r=>r.json())
       .then(data=>setFilms(data.results))
     }, [])
 
-  return(
-    <div>
-        <FilmsList films={films}/>
-    </div>
-  )
+    const handleSelectChange = (film) => {
+        const planetPromises = film.planets.map((planet) => {
+          return fetch(planet)
+          .then(r=>r.json())
+        })    
+        
+    Promise.all(planetPromises)
+        .then((data) => {
+        setPlanets(data)
+        setSelectedFilm(film)
+    })
+    }   
+
+
+
+
+    return(
+        <div>
+            <img id="logo" src={require("../images/starwars.png")}></img>
+            <img id='background'src={require('../images/background.png')}></img>
+            <div id="dropdown"><FilmSelect films={films} handleSelectChange={handleSelectChange}/></div>
+            <div id="text">{selectedFilm ? <FilmDetail film={selectedFilm} planets={planets} />:null}</div>
+        </div>
+    )
 }
 
-export default MainContainer;
+export default MainContainer
