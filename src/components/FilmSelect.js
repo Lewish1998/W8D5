@@ -10,9 +10,25 @@ const FilmSelect = ({films, handleSelectChange}) => {
     //   return <option key={index} value={index}>{film.title}</option>
     // });
 
-    const filmButton = films.map((film, index) => {
+
+
+// ORIGINAL DON'T DELETE
+    films.sort((a, b) => a.title < b.title ? 1 : -1)
+    const filmButton = films.sort((a, b) => a.title < b.title ? 1: -1).map((film, index) => {
       return <button onClick={handleChange} key={index} value={index}>{film.title}</button>
     })
+
+// This doesn't work 
+    // const filmButton = films.sort((a, b => a.title > b.title) ? 1:-1).map((film, index) => {
+    //       return <button onClick={handleChange} key={index} value={index}>{film.title}</button>
+    //     })
+        
+    // films.sort((a, b) => a.title < b.title ? 1 : -1)
+
+
+
+
+
     return(
         <div>
         {/* <select onChange={handleChange}>
