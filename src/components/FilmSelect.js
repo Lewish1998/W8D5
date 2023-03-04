@@ -5,15 +5,23 @@ const FilmSelect = ({films, handleSelectChange}) => {
         handleSelectChange(films[index])
     }
 
-    const filmOptions = films.map((film, index) => {
-      return <option key={index} value={index}>{film.title}</option>
-    });
+    // Change to this to change buttons to dropdown
+    // const filmOptions = films.map((film, index) => {
+    //   return <option key={index} value={index}>{film.title}</option>
+    // });
 
+    const filmButton = films.map((film, index) => {
+      return <button onClick={handleChange} key={index} value={index}>{film.title}</button>
+    })
     return(
-        <select onChange={handleChange}>
+        <div>
+        {/* <select onChange={handleChange}>
             {filmOptions}
-        </select>
+        </select> */}
+        {filmButton}
+        </div>
+
     )
 }
 
-export default FilmSelect
+export default FilmSelect;
