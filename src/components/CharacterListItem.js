@@ -9,7 +9,6 @@ const CharacterListItem = ({character}) => {
         <p>Eye Colour: {character.eye_color}</p>
         <p>Birth Year: {character.birth_year}</p>
         <p>Gender: {character.gender}</p>
-        <p>Species: {character.species}</p>
     </li>
  ) 
 }

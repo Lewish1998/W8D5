@@ -11,19 +11,15 @@ const FilmSelect = ({films, handleSelectChange}) => {
     // });
 
 
+// a/b.episode_id > = 456, 123
+// a/b.title > = alphabetical
+// a/b.release_date = release date
 
-// ORIGINAL DON'T DELETE
-    films.sort((a, b) => a.title < b.title ? 1 : -1)
-    const filmButton = films.sort((a, b) => a.title < b.title ? 1: -1).map((film, index) => {
+    const filmButton = films.sort((a, b) => a.release_date > b.release_date ? 1: -1).map((film, index) => {
       return <button onClick={handleChange} key={index} value={index}>{film.title}</button>
     })
 
-// This doesn't work 
-    // const filmButton = films.sort((a, b => a.title > b.title) ? 1:-1).map((film, index) => {
-    //       return <button onClick={handleChange} key={index} value={index}>{film.title}</button>
-    //     })
-        
-    // films.sort((a, b) => a.title < b.title ? 1 : -1)
+    
 
 
 
@@ -31,6 +27,7 @@ const FilmSelect = ({films, handleSelectChange}) => {
 
     return(
         <div>
+        {/* Change to dropdown */}
         {/* <select onChange={handleChange}>
             {filmOptions}
         </select> */}
