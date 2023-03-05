@@ -9,6 +9,7 @@ const MainContainer = () => {
     const [selectedFilm, setSelectedFilm] = useState(null)
     const [planets, setPlanets] = useState([])
     const [characters, setCharacters] = useState([])
+    const [ships, setShips] = useState([])
 
     useEffect( () => {
       fetch('https://swapi.dev/api/films')
@@ -25,6 +26,11 @@ const MainContainer = () => {
           return fetch(character)
           .then(r=>r.json())
         })
+        const shipPromises = film.characters.spaceships.map((ship) => {
+          return fetch(ship)
+          .then(r=>r.json())
+        })
+        
         
     Promise.all(planetPromises)
         .then((data) => {
@@ -35,7 +41,10 @@ const MainContainer = () => {
         .then((data) => {
         setCharacters(data)
         })
-
+    Promise.all(shipPromises)
+        .then((data) => {
+        setShips(data)
+        })
     }  
 
     return(

@@ -1,3 +1,6 @@
+
+
+
 import './css/characterList.css'
 import CharacterListItem from './CharacterListItem'
 
@@ -8,7 +11,12 @@ const CharacterList = ({characters}) => {
 
   return(
     <div>
-        <h3>Character List</h3>
+        <h3 id='heading'>Character List</h3>
+        <select>
+          <option selected>Add a select bar to sort the characters by different properties.</option>
+          <option>Alphabetical</option>
+          <option>Birth Year</option>
+        </select>
         <ul id='character-list'>{characterItems}</ul>
     </div>
   )
