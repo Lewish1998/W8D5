@@ -1,6 +1,8 @@
+import './css/characterListItem.css'
+
 const CharacterListItem = ({character}) => {
  return(
-    <li>
+    <li id="list-item">
         <h4>{character.name}</h4>
         <p>Height: {character.height}</p>
         <p>Mass: {character.mass}</p>

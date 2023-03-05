@@ -1,0 +1,33 @@
+#button {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 16px;
+    color: white;
+    background: rgb(14, 39, 149);
+    /* background-image:linear-gradient(black, black, black, black, black); */
+    width: 140px;
+    height: 50px;
+    margin: 20px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 8px 0px rgb(255, 255, 255);
+    /* transition-property: all; */
+    transition: all 0.3s;
+}
+
+#button:hover {
+    background: rgb(199, 0, 0);
+    box-shadow: 0px 0px 18px 10px red;
+    color: black;
+
+}
+
+
+
+#container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 5px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 50px;
+}
+

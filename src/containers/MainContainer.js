@@ -39,11 +39,13 @@ const MainContainer = () => {
     }  
 
     return(
-        <div>
-            <img id="logo" src={require("../images/starwars.png")}></img>
+        <div className="container">
+            {/* <img id="logo" src={require("../images/starwars.png")}></img> */}
             {/* <img id='background'src={require('../images/background.png')}></img> */}
-            <div id="dropdown"><FilmSelect films={films} handleSelectChange={handleSelectChange}/></div>
-            <div id="text">{selectedFilm ? <FilmDetail film={selectedFilm} planets={planets} characters={characters}/>:null}</div>
+            <div id="header-box">
+              <div id="dropdown"><FilmSelect films={films} handleSelectChange={handleSelectChange}/></div>
+            </div>
+            <div id="film-detail">{selectedFilm ? <FilmDetail film={selectedFilm} planets={planets} characters={characters}/>:null}</div>
         </div>
     )
 }

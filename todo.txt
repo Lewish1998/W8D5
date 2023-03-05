@@ -1,0 +1,15 @@
+make nav bar stationary when scrolling + smaller in size
+
+add commas in population elements
+
+create drop down to sort films (and planets and characters if possible) by different orders
+
+add more fun interaction
+
+create new page showing details of ships. Will have to research how to render new pages.
+
+create search function for ships (and characters if time)
+
+create a next button for the ships page (as it only renders 36 ships)
+
+sort characters alphabetically 

@@ -1,0 +1,5 @@
+#character-list {
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20% ;
+    list-style: none;
+}

@@ -1,0 +1,19 @@
+#inner-box {
+
+    background-color: rgba(0, 0, 0, 0.3);
+    margin: 20px;
+    display: grid;
+    color: white;
+    grid-template-rows: 15% 42.5% 42.5%;
+    text-align: center;
+    border-radius: 50px;
+}
+
+#outer-box {
+    width: 75%;
+    border: solid rgba(38, 0, 255, 0.299);
+    background-color: rgba(0, 0, 0, 0.3);
+    margin: 20px;
+    color: white;
+    border-radius: 50px;
+}

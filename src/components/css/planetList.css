@@ -1,0 +1,10 @@
+#planet-list {
+    display: grid;
+    grid-template-columns: 33.3% 33.3% 33.3%; /* might be affected by other css file??? check border*/
+    /* border: solid red; */
+    list-style: none;
+}
+
+#heading {
+    text-align: center;
+}

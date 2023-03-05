@@ -1,10 +1,11 @@
+import './css/filmDetail.css'
 import CharacterList from "./CharacterList";
 import PlanetList from "./PlanetsList";
 
 const FilmDetail = ({film, planets, characters}) => {
   return(
-    <div>
-        <div>
+    <div id="outer-box">
+        <div id="inner-box">
             <h2>{film.title}</h2>
             <p><b>Directer: </b>{film.director}</p>
             <p><b>Producer: </b>{film.producer}</p>

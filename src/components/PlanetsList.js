@@ -1,5 +1,5 @@
 import PlanetListItem from "./PlanetListItem"
-// import './planetList.css'
+import './css/planetList.css'
 
 const PlanetList = ({planets}) => {
   const planetItems = planets.map((planet, index) => {
@@ -8,8 +8,8 @@ const PlanetList = ({planets}) => {
 
   return(
     <div>
-        <h3>Planet List</h3>
-        <ul>
+        <h3 id="heading">Planet List</h3>
+        <ul id="planet-list">
             {planetItems}
         </ul>
     </div>

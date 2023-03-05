@@ -1,3 +1,5 @@
+import './css/filmSelect.css'
+
 const FilmSelect = ({films, handleSelectChange}) => {
   
     const handleChange = (event) => {
@@ -16,7 +18,7 @@ const FilmSelect = ({films, handleSelectChange}) => {
 // a/b.release_date = release date
 
     const filmButton = films.sort((a, b) => a.release_date > b.release_date ? 1: -1).map((film, index) => {
-      return <button onClick={handleChange} key={index} value={index}>{film.title}</button>
+      return <button id='button' onClick={handleChange} key={index} value={index}>{film.title}</button>
     })
 
     
@@ -26,12 +28,12 @@ const FilmSelect = ({films, handleSelectChange}) => {
 
 
     return(
-        <div>
+        <div id="container">
         {/* Change to dropdown */}
         {/* <select onChange={handleChange}>
             {filmOptions}
         </select> */}
-        {filmButton}
+            {filmButton}
         </div>
 
     )
