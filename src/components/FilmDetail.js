@@ -2,7 +2,7 @@ import './css/filmDetail.css'
 import CharacterList from "./CharacterList";
 import PlanetList from "./PlanetsList";
 
-const FilmDetail = ({film, planets, characters, handleCharacterClick}) => {
+const FilmDetail = ({film, planets, characters, handleCharacterClick, starship}) => {
   return(
     <div id="outer-box">
         <div id="inner-box">

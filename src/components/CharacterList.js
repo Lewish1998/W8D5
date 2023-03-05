@@ -4,9 +4,9 @@
 import './css/characterList.css'
 import CharacterListItem from './CharacterListItem'
 
-const CharacterList = ({characters, setSelectedCharacter}) => {
+const CharacterList = ({characters, handleCharacterClick, starship}) => {
   const characterItems = characters.sort((a, b) => a.name > b.name ? 1 : -1).map((character, index) => {
-    return <CharacterListItem key={index} character={character} setSelectedCharacter={setSelectedCharacter} characters={characters}/>
+    return <CharacterListItem key={index} character={character} handleCharacterClick={handleCharacterClick} starship={starship}/>
   })
 
   return(

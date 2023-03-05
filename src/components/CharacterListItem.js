@@ -1,15 +1,13 @@
 import './css/characterListItem.css'
 import StarshipsList from './StarshipsList';
 
-const CharacterListItem = ({character, characters, handleCharacterClick}) => {
+const CharacterListItem = ({character, handleCharacterClick, starship}) => {
 
 
         
-    // const handleClick = (x) => {
-    //     const index = x.target.value;
-    //     handleCharacterClick(characters[index])
-    //     console.log(characters)
-    // }
+    const handleClick = () => {
+        handleCharacterClick(character)
+    }
 
     // const starshipButton = characters.map((index, name) => {
     //   return <button id='starship-button' onClick={handleClick} key={name} value={index}>Starship</button>
@@ -26,8 +24,9 @@ const CharacterListItem = ({character, characters, handleCharacterClick}) => {
         <p>Eye Colour: {character.eye_color}</p>
         <p>Birth Year: {character.birth_year}</p>
         <p>Gender: {character.gender}</p>
-        {/* {starshipButton} */}
+        <button onClick={handleClick} value={character}>Starships</button>
     </li>
+        <h3>{starship.name}</h3>
     </div>
  ) 
 };
