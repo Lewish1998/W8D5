@@ -1,17 +1,17 @@
-
+// import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 
 
 import './css/characterList.css'
 import CharacterListItem from './CharacterListItem'
 
-const CharacterList = ({characters}) => {
+const CharacterList = ({characters, setSelectedCharacter}) => {
   const characterItems = characters.sort((a, b) => a.name > b.name ? 1 : -1).map((character, index) => {
-    return <CharacterListItem key={index} character={character}/>
+    return <CharacterListItem key={index} character={character} setSelectedCharacter={setSelectedCharacter}/>
   })
 
   return(
     <div>
-        <h3 id='heading'>Character List</h3>
+        <h3 id='heading'>Characters</h3>
         <select>
           <option selected>Add a select bar to sort the characters by different properties.</option>
           <option>Alphabetical</option>

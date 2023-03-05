@@ -9,7 +9,7 @@ const MainContainer = () => {
     const [selectedFilm, setSelectedFilm] = useState(null)
     const [planets, setPlanets] = useState([])
     const [characters, setCharacters] = useState([])
-    const [ships, setShips] = useState([])
+    const [selectedCharacterShips, setSelectedCharacterShips] = useState(null)
 
     useEffect( () => {
       fetch('https://swapi.dev/api/films')
@@ -17,6 +17,10 @@ const MainContainer = () => {
       .then(data=>setFilms(data.results))
     }, [])
 
+    const handleCharacterClick = (character) => {
+      setSelectedCharacterShips(character)
+      console.log(selectedCharacterShips)
+    }
     const handleSelectChange = (film) => {
         const planetPromises = film.planets.map((planet) => {
           return fetch(planet)
@@ -26,11 +30,6 @@ const MainContainer = () => {
           return fetch(character)
           .then(r=>r.json())
         })
-        const shipPromises = film.characters.spaceships.map((ship) => {
-          return fetch(ship)
-          .then(r=>r.json())
-        })
-        
         
     Promise.all(planetPromises)
         .then((data) => {
@@ -41,10 +40,6 @@ const MainContainer = () => {
         .then((data) => {
         setCharacters(data)
         })
-    Promise.all(shipPromises)
-        .then((data) => {
-        setShips(data)
-        })
     }  
 
     return(
@@ -54,7 +49,7 @@ const MainContainer = () => {
             <div id="header-box">
               <div id="dropdown"><FilmSelect films={films} handleSelectChange={handleSelectChange}/></div>
             </div>
-            <div id="film-detail">{selectedFilm ? <FilmDetail film={selectedFilm} planets={planets} characters={characters}/>:null}</div>
+            <div id="film-detail">{selectedFilm ? <FilmDetail film={selectedFilm} planets={planets} characters={characters} handleCharacterClick={handleCharacterClick}/>:null}</div>
         </div>
     )
 }

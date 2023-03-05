@@ -13,3 +13,7 @@ create search function for ships (and characters if time)
 create a next button for the ships page (as it only renders 36 ships)
 
 sort characters alphabetically 
+
+
+each character to have a button to view their ships.
+Button will select character and return a new page containing information about their ships

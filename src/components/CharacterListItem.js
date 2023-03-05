@@ -1,9 +1,11 @@
 import './css/characterListItem.css'
 
-const CharacterListItem = ({character}) => {
+const CharacterListItem = ({character, handleCharacterClick}) => {
+
+
  return(
     <li id="list-item">
-        <h4>{character.name}</h4>
+        <button onClick={handleClick}>{character.name}</button>
         <p>Height: {character.height}</p>
         <p>Mass: {character.mass}</p>
         <p>Hair Colour: {character.hair_color}</p>

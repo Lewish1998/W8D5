@@ -2,7 +2,7 @@ import './css/filmDetail.css'
 import CharacterList from "./CharacterList";
 import PlanetList from "./PlanetsList";
 
-const FilmDetail = ({film, planets, characters}) => {
+const FilmDetail = ({film, planets, characters, handleCharacterClick}) => {
   return(
     <div id="outer-box">
         <div id="inner-box">
@@ -15,7 +15,7 @@ const FilmDetail = ({film, planets, characters}) => {
             <PlanetList planets={planets}/>
         </div>
         <div>
-          <CharacterList characters={characters}/>
+          <CharacterList characters={characters} handleCharacterClick={handleCharacterClick}/>
         </div>
     </div>
   )
