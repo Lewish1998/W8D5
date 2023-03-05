@@ -7,9 +7,9 @@ const MainContainer = () => {
   
     const [films, setFilms] = useState([])
     const [selectedFilm, setSelectedFilm] = useState(null)
-    const [planets, setPlanets] = useState([])
+    const [planets, setPlanets] = useState([null])
     const [characters, setCharacters] = useState([])
-    const [selectedCharacterShips, setSelectedCharacterShips] = useState(null)
+    const [starships, setStarships] = useState(null)
 
     useEffect( () => {
       fetch('https://swapi.dev/api/films')
@@ -17,10 +17,7 @@ const MainContainer = () => {
       .then(data=>setFilms(data.results))
     }, [])
 
-    const handleCharacterClick = (character) => {
-      setSelectedCharacterShips(character)
-      console.log(selectedCharacterShips)
-    }
+
     const handleSelectChange = (film) => {
         const planetPromises = film.planets.map((planet) => {
           return fetch(planet)
@@ -30,7 +27,7 @@ const MainContainer = () => {
           return fetch(character)
           .then(r=>r.json())
         })
-        
+
     Promise.all(planetPromises)
         .then((data) => {
         setPlanets(data)
@@ -42,6 +39,17 @@ const MainContainer = () => {
         })
     }  
 
+    const handleCharacterClick = (character) => {
+      const starshipPromises = character.starships.map((starship) => {
+        return fetch(starship)
+        .then(r=>r.json())
+      })
+      Promise.all(starshipPromises)
+      .then((data) => {
+        setStarships(data)
+      })
+    }
+
     return(
         <div className="container">
             {/* <img id="logo" src={require("../images/starwars.png")}></img> */}
@@ -49,7 +57,7 @@ const MainContainer = () => {
             <div id="header-box">
               <div id="dropdown"><FilmSelect films={films} handleSelectChange={handleSelectChange}/></div>
             </div>
-            <div id="film-detail">{selectedFilm ? <FilmDetail film={selectedFilm} planets={planets} characters={characters} handleCharacterClick={handleCharacterClick}/>:null}</div>
+            <div id="film-detail">{selectedFilm ? <FilmDetail film={selectedFilm} planets={planets} characters={characters} starships={starships} handleCharacterClick={handleCharacterClick}/>:null}</div>
         </div>
     )
 }

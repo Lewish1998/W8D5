@@ -1,4 +1,16 @@
 const PlanetListItem = ({planet}) => {
+
+
+
+// pretend this isn't here. No idea how it works but it looks nice
+  function commas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+  
+
+
+
+
   return(
     <li>
       <h4>{planet.name}</h4>
@@ -7,7 +19,7 @@ const PlanetListItem = ({planet}) => {
       <p><b>Climate: </b>{planet.climate}</p>
       <p><b>Gravity: </b>{planet.gravity}</p>
       <p><b>Terrain: </b>{planet.terrain}</p>
-      <p><b>Population: </b>{planet.population}</p>
+      <p><b>Population: </b>{commas(planet.population)}</p>
     </li>
   )
 }

@@ -6,7 +6,7 @@ import CharacterListItem from './CharacterListItem'
 
 const CharacterList = ({characters, setSelectedCharacter}) => {
   const characterItems = characters.sort((a, b) => a.name > b.name ? 1 : -1).map((character, index) => {
-    return <CharacterListItem key={index} character={character} setSelectedCharacter={setSelectedCharacter}/>
+    return <CharacterListItem key={index} character={character} setSelectedCharacter={setSelectedCharacter} characters={characters}/>
   })
 
   return(
@@ -18,6 +18,7 @@ const CharacterList = ({characters, setSelectedCharacter}) => {
           <option>Birth Year</option>
         </select>
         <ul id='character-list'>{characterItems}</ul>
+
     </div>
   )
 }
