@@ -15,7 +15,7 @@ const FilmDetail = ({film, planets, characters, handleCharacterClick, starship})
             <PlanetList planets={planets}/>
         </div>
         <div>
-          <CharacterList characters={characters} handleCharacterClick={handleCharacterClick}/>
+          <CharacterList characters={characters} handleCharacterClick={handleCharacterClick} starship={starship}/>
         </div>
     </div>
   )

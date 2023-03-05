@@ -9,8 +9,7 @@ const MainContainer = () => {
     const [selectedFilm, setSelectedFilm] = useState(null)
     const [planets, setPlanets] = useState([null])
     const [characters, setCharacters] = useState([])
-    const [starship, setStarship] = useState(null)
-    const [selectedCharacter, setSelectedCharacter] = useState([])
+    const [starship, setStarship] = useState([])
 
 
     useEffect( () => {
@@ -44,18 +43,15 @@ const MainContainer = () => {
 
 
     const handleCharacterClick = (character) => {
-      useEffect(() => {
-      console.log(character)
       const starshipPromises = character.starships.map((starship) => {
         return fetch(starship)
         .then(r=>r.json())
       })
       Promise.all(starshipPromises)
       .then((data) => {
-        setStarship(data)
-        console.log(starship)
-      })
-    }, [])
+      data?setStarship(data):setStarship(null)
+      console.log(starship)
+      });
     }
     
 

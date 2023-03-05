@@ -15,5 +15,8 @@ create a next button for the ships page (as it only renders 36 ships)
 sort characters alphabetically 
 
 
-each character to have a button to view their ships.
-Button will select character and return a new page containing information about their ships
+
+
+6th:
+    render starships on click. Map them in the characters list and display in the list characterItems
+    if that works try rendering a new page 

@@ -9,6 +9,7 @@ const CharacterList = ({characters, handleCharacterClick, starship}) => {
     return <CharacterListItem key={index} character={character} handleCharacterClick={handleCharacterClick} starship={starship}/>
   })
 
+
   return(
     <div>
         <h3 id='heading'>Characters</h3>
