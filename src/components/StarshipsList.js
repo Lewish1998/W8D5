@@ -1,3 +1,4 @@
+import './css/starshipsList.css'
 import StarshipListItems from "./StarshipListItems"
 
 const StarShipsList = ({starship}) => {
@@ -7,8 +8,7 @@ const StarShipsList = ({starship}) => {
 
     return(
         <div>
-            <h3>Starships</h3>
-            <ul>
+            <ul id='ship-grid'>
                 {starshipItems}
             </ul>
         </div>

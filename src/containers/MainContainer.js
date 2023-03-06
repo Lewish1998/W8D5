@@ -1,7 +1,10 @@
+import { BrowserRouter as Router, Routes, Route} from "react-router-dom"
+import AllStarships from "../components/AllStarships"
 import { useEffect, useState } from "react"
 import FilmDetail from "../components/FilmDetail"
 import FilmSelect from "../components/FilmSelect"
 import './container.css'
+import { useNavigate } from "react-router-dom"
 
 const MainContainer = () => {
   
@@ -10,6 +13,7 @@ const MainContainer = () => {
     const [planets, setPlanets] = useState([null])
     const [characters, setCharacters] = useState([])
     const [starship, setStarship] = useState([])
+    const [allShips, setAllShips] = useState([])
 
 
     useEffect( () => {
@@ -17,6 +21,12 @@ const MainContainer = () => {
       .then(r=>r.json())
       .then(data=>setFilms(data.results))
     }, [])
+
+    useEffect(() => {
+      fetch('https://swapi.dev/api/starships/')
+      .then(r=>r.json())
+      .then(data=>setAllShips(data.results))
+    },[])
 
 
     const handleSelectChange = (film) => {
@@ -53,7 +63,6 @@ const MainContainer = () => {
       console.log(starship)
       });
     }
-    
 
     return(
         <div className="container">
@@ -63,6 +72,14 @@ const MainContainer = () => {
               <div id="dropdown"><FilmSelect films={films} handleSelectChange={handleSelectChange}/></div>
             </div>
             <div id="film-detail">{selectedFilm ? <FilmDetail film={selectedFilm} planets={planets} characters={characters} starship={starship} handleCharacterClick={handleCharacterClick}/>:null}</div>
+
+            <Router>
+              <Routes>
+                <Route path="/starships" element={<AllStarships allShips={allShips}/>}/>
+              </Routes>
+            </Router>
+              
+
         </div>
     )
 }

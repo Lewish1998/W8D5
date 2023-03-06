@@ -1,0 +1,10 @@
+#ship-grid {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25% ;
+    margin: 10px;
+    list-style: none;
+}
+
+#info {
+    color: cadetblue;
+}

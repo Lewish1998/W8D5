@@ -1,6 +1,7 @@
 const StarshipListItems = ({ship}) => {
   
     return(
+        <div>
         <li>
             <h4>{ship.name}</h4>
             <p>Model: {ship.model}</p>
@@ -11,6 +12,7 @@ const StarshipListItems = ({ship}) => {
             <p>Hyperdrive Rating: {ship.hyperdrive_rating}</p>
             <p>Class: {ship.starship_class}</p>
         </li>
+        </div>
     )
 }
 
