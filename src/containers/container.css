@@ -2,7 +2,7 @@
     background-image: url('../images/background5.png');
     background-attachment: fixed;
     background-size:cover;
-    height: 100%;
+    min-height: 100%;
   }
 
 #dropdown {

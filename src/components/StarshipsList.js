@@ -1,8 +1,8 @@
 import StarshipListItems from "./StarshipListItems"
 
-const StarShipsList = ({starships}) => {
-    const starshipItems = starships.map((starship, index) => {
-      return <StarshipListItems key={index} starship={starship}/>
+const StarShipsList = ({starship}) => {
+    const starshipItems = starship.map((ship, index) => {
+      return <StarshipListItems key={index} ship={ship}/>
     })
 
     return(

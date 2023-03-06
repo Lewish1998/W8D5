@@ -7,9 +7,6 @@ const CharacterListItem = ({character, handleCharacterClick, starship}) => {
         handleCharacterClick(character)
     };
 
-    const ship = starship.map((ship) => {
-      return ship}
-    )
 
  return(
     <div>
@@ -24,8 +21,6 @@ const CharacterListItem = ({character, handleCharacterClick, starship}) => {
         <p>Gender: {character.gender}</p>
         <button onClick={handleClick} value={character}>Starships</button>
     </li>
-        <h3>{ship.name}</h3>
-        <h3>Ship go here plz</h3>
     </div>
  ) 
 };

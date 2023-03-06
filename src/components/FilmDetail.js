@@ -1,6 +1,7 @@
 import './css/filmDetail.css'
 import CharacterList from "./CharacterList";
 import PlanetList from "./PlanetsList";
+import StarShipsList from './StarshipsList';
 
 const FilmDetail = ({film, planets, characters, handleCharacterClick, starship}) => {
   return(
@@ -17,6 +18,7 @@ const FilmDetail = ({film, planets, characters, handleCharacterClick, starship})
         <div>
           <CharacterList characters={characters} handleCharacterClick={handleCharacterClick} starship={starship}/>
         </div>
+        <div><StarShipsList starship={starship}/></div>
     </div>
   )
 }

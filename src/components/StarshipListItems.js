@@ -1,15 +1,15 @@
-const StarshipListItems = ({starship}) => {
+const StarshipListItems = ({ship}) => {
   
     return(
         <li>
-            <h4>{starship.name}</h4>
-            <p>Model: {starship.model}</p>
-            <p>Manufacturer: {starship.manufacturer}</p>
-            <p>Price: {starship.cost_in_credits}</p>
-            <p>Max Atmospheric Speed: {starship.max_atmosphering_speed}</p>
-            <p>Cargo Capacity: {starship.cargo_capacity}</p>
-            <p>Hyperdrive Rating: {starship.hyperdrive_rating}</p>
-            <p>Class: {starship.starship_class}</p>
+            <h4>{ship.name}</h4>
+            <p>Model: {ship.model}</p>
+            <p>Manufacturer: {ship.manufacturer}</p>
+            <p>Price: {ship.cost_in_credits}</p>
+            <p>Max Atmospheric Speed: {ship.max_atmosphering_speed}</p>
+            <p>Cargo Capacity: {ship.cargo_capacity}</p>
+            <p>Hyperdrive Rating: {ship.hyperdrive_rating}</p>
+            <p>Class: {ship.starship_class}</p>
         </li>
     )
 }
